@@ -5,7 +5,7 @@ metadata:
   labels:
     app: usermgmt-webapp
   name: frontendservice
-  namespace: default
+  namespace: prod
   
 spec:
   
