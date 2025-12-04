@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: compute-resources
+  namespace: dev
+spec:
+  hard:
+    pods: "10" #inside this namespace we can create maximum 10 pods
+    requests.cpu: "1"
+    requests.memory: 1Gi #all the pod inside this namespace can use maximum 1Gi memory
+    limits.cpu: "2"
+    limits.memory: 2Gi #inside the namespace all the pods can use maximum 2Gi memory

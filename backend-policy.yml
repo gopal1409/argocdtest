@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: backend-policy #this is the name of the network policy
+  namespace: crm #in the crm namespace
+spec:
+  podSelector: 
+    matchLabels:
+      run: backend
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress: #frontend can intiate connections to backend pods
+  - from: #to accept the traffic from frontend pods
+    - podSelector:
+        matchLabels:
+          run: frontend
+
+        
+  
